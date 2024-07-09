@@ -1,0 +1,709 @@
+{
+  "version": "0.5.1",
+  "createTimestamp": 1719950497569,
+  "modifyTimestamp": 1719950497569,
+  "uri": "file:/C:/Users/micha/OneDrive/Repos/GenomeSearch/QUPathProject/project.qpproj",
+  "lastID": 6,
+  "images": [
+    {
+      "serverBuilder": {
+        "builderType": "pyramidize",
+        "builder": {
+          "builderType": "uri",
+          "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+          "uri": "file:/C:/Users/micha/OneDrive/Repos/GenomeSearch/genome_image_64.tif",
+          "args": [
+            "--series",
+            "0"
+          ],
+          "metadata": {
+            "name": "genome_image_64.tif",
+            "width": 64,
+            "height": 51537979,
+            "sizeZ": 1,
+            "sizeT": 1,
+            "channelType": "DEFAULT",
+            "isRGB": false,
+            "pixelType": "UINT8",
+            "levels": [
+              {
+                "downsample": 1.0,
+                "width": 64,
+                "height": 51537979
+              }
+            ],
+            "channels": [
+              {
+                "name": "Channel 1",
+                "color": -1
+              }
+            ],
+            "pixelCalibration": {
+              "pixelWidth": {
+                "value": 1.0,
+                "unit": "px"
+              },
+              "pixelHeight": {
+                "value": 1.0,
+                "unit": "px"
+              },
+              "zSpacing": {
+                "value": 1.0,
+                "unit": "z-slice"
+              },
+              "timeUnit": "SECONDS",
+              "timepoints": []
+            },
+            "preferredTileWidth": 64,
+            "preferredTileHeight": 16384
+          }
+        },
+        "metadata": {
+          "name": "genome_image_64.tif",
+          "width": 64,
+          "height": 51537979,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT8",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 64,
+              "height": 51537979
+            },
+            {
+              "downsample": 4.0,
+              "width": 16,
+              "height": 12884494
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 1.0,
+              "unit": "px"
+            },
+            "pixelHeight": {
+              "value": 1.0,
+              "unit": "px"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 256,
+          "preferredTileHeight": 16384
+        }
+      },
+      "entryID": 1,
+      "randomizedName": "59fd24ba-ecb4-4d68-b982-453d60e8ba28",
+      "imageName": "genome_image_64.tif",
+      "metadata": {}
+    },
+    {
+      "serverBuilder": {
+        "builderType": "pyramidize",
+        "builder": {
+          "builderType": "uri",
+          "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+          "uri": "file:/C:/Users/micha/OneDrive/Repos/GenomeSearch/genome_image_256.tif",
+          "args": [
+            "--series",
+            "0"
+          ],
+          "metadata": {
+            "name": "genome_image_256.tif",
+            "width": 256,
+            "height": 12884495,
+            "sizeZ": 1,
+            "sizeT": 1,
+            "channelType": "DEFAULT",
+            "isRGB": false,
+            "pixelType": "UINT8",
+            "levels": [
+              {
+                "downsample": 1.0,
+                "width": 256,
+                "height": 12884495
+              }
+            ],
+            "channels": [
+              {
+                "name": "Channel 1",
+                "color": -1
+              }
+            ],
+            "pixelCalibration": {
+              "pixelWidth": {
+                "value": 1.0,
+                "unit": "px"
+              },
+              "pixelHeight": {
+                "value": 1.0,
+                "unit": "px"
+              },
+              "zSpacing": {
+                "value": 1.0,
+                "unit": "z-slice"
+              },
+              "timeUnit": "SECONDS",
+              "timepoints": []
+            },
+            "preferredTileWidth": 256,
+            "preferredTileHeight": 4096
+          }
+        },
+        "metadata": {
+          "name": "genome_image_256.tif",
+          "width": 256,
+          "height": 12884495,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT8",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 256,
+              "height": 12884495
+            },
+            {
+              "downsample": 4.0,
+              "width": 64,
+              "height": 3221123
+            },
+            {
+              "downsample": 16.0,
+              "width": 16,
+              "height": 805280
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 1.0,
+              "unit": "px"
+            },
+            "pixelHeight": {
+              "value": 1.0,
+              "unit": "px"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 256,
+          "preferredTileHeight": 4096
+        }
+      },
+      "entryID": 2,
+      "randomizedName": "715cef39-fc49-4884-8df7-99a58af61990",
+      "imageName": "genome_image_256.tif",
+      "metadata": {}
+    },
+    {
+      "serverBuilder": {
+        "builderType": "pyramidize",
+        "builder": {
+          "builderType": "uri",
+          "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+          "uri": "file:/C:/Users/micha/OneDrive/Repos/GenomeSearch/genome_image_1024.tif",
+          "args": [
+            "--series",
+            "0"
+          ],
+          "metadata": {
+            "name": "genome_image_1024.tif",
+            "width": 1024,
+            "height": 3221124,
+            "sizeZ": 1,
+            "sizeT": 1,
+            "channelType": "DEFAULT",
+            "isRGB": false,
+            "pixelType": "UINT8",
+            "levels": [
+              {
+                "downsample": 1.0,
+                "width": 1024,
+                "height": 3221124
+              }
+            ],
+            "channels": [
+              {
+                "name": "Channel 1",
+                "color": -1
+              }
+            ],
+            "pixelCalibration": {
+              "pixelWidth": {
+                "value": 1.0,
+                "unit": "px"
+              },
+              "pixelHeight": {
+                "value": 1.0,
+                "unit": "px"
+              },
+              "zSpacing": {
+                "value": 1.0,
+                "unit": "z-slice"
+              },
+              "timeUnit": "SECONDS",
+              "timepoints": []
+            },
+            "preferredTileWidth": 1024,
+            "preferredTileHeight": 1024
+          }
+        },
+        "metadata": {
+          "name": "genome_image_1024.tif",
+          "width": 1024,
+          "height": 3221124,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT8",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 3221124
+            },
+            {
+              "downsample": 4.0,
+              "width": 256,
+              "height": 805281
+            },
+            {
+              "downsample": 16.0,
+              "width": 64,
+              "height": 201320
+            },
+            {
+              "downsample": 64.0,
+              "width": 16,
+              "height": 50330
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 1.0,
+              "unit": "px"
+            },
+            "pixelHeight": {
+              "value": 1.0,
+              "unit": "px"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 256,
+          "preferredTileHeight": 1024
+        }
+      },
+      "entryID": 3,
+      "randomizedName": "f10de755-4203-4859-9ac2-4968954b3721",
+      "imageName": "genome_image_1024.tif",
+      "metadata": {}
+    },
+    {
+      "serverBuilder": {
+        "builderType": "pyramidize",
+        "builder": {
+          "builderType": "uri",
+          "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+          "uri": "file:/C:/Users/micha/OneDrive/Repos/GenomeSearch/genome_image_4096.tif",
+          "args": [
+            "--series",
+            "0"
+          ],
+          "metadata": {
+            "name": "genome_image_4096.tif",
+            "width": 4096,
+            "height": 805281,
+            "sizeZ": 1,
+            "sizeT": 1,
+            "channelType": "DEFAULT",
+            "isRGB": false,
+            "pixelType": "UINT8",
+            "levels": [
+              {
+                "downsample": 1.0,
+                "width": 4096,
+                "height": 805281
+              }
+            ],
+            "channels": [
+              {
+                "name": "Channel 1",
+                "color": -1
+              }
+            ],
+            "pixelCalibration": {
+              "pixelWidth": {
+                "value": 1.0,
+                "unit": "px"
+              },
+              "pixelHeight": {
+                "value": 1.0,
+                "unit": "px"
+              },
+              "zSpacing": {
+                "value": 1.0,
+                "unit": "z-slice"
+              },
+              "timeUnit": "SECONDS",
+              "timepoints": []
+            },
+            "preferredTileWidth": 4096,
+            "preferredTileHeight": 256
+          }
+        },
+        "metadata": {
+          "name": "genome_image_4096.tif",
+          "width": 4096,
+          "height": 805281,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT8",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 4096,
+              "height": 805281
+            },
+            {
+              "downsample": 4.0,
+              "width": 1024,
+              "height": 201320
+            },
+            {
+              "downsample": 16.0,
+              "width": 256,
+              "height": 50330
+            },
+            {
+              "downsample": 64.0,
+              "width": 64,
+              "height": 12582
+            },
+            {
+              "downsample": 256.0,
+              "width": 16,
+              "height": 3145
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 1.0,
+              "unit": "px"
+            },
+            "pixelHeight": {
+              "value": 1.0,
+              "unit": "px"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 256,
+          "preferredTileHeight": 256
+        }
+      },
+      "entryID": 4,
+      "randomizedName": "06c74c50-12fe-4422-b505-65468a2975a0",
+      "imageName": "genome_image_4096.tif",
+      "metadata": {}
+    },
+    {
+      "serverBuilder": {
+        "builderType": "pyramidize",
+        "builder": {
+          "builderType": "uri",
+          "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+          "uri": "file:/C:/Users/micha/OneDrive/Repos/GenomeSearch/genome_image_16384.tif",
+          "args": [
+            "--series",
+            "0"
+          ],
+          "metadata": {
+            "name": "genome_image_16384.tif",
+            "width": 16384,
+            "height": 201321,
+            "sizeZ": 1,
+            "sizeT": 1,
+            "channelType": "DEFAULT",
+            "isRGB": false,
+            "pixelType": "UINT8",
+            "levels": [
+              {
+                "downsample": 1.0,
+                "width": 16384,
+                "height": 201321
+              }
+            ],
+            "channels": [
+              {
+                "name": "Channel 1",
+                "color": -1
+              }
+            ],
+            "pixelCalibration": {
+              "pixelWidth": {
+                "value": 1.0,
+                "unit": "px"
+              },
+              "pixelHeight": {
+                "value": 1.0,
+                "unit": "px"
+              },
+              "zSpacing": {
+                "value": 1.0,
+                "unit": "z-slice"
+              },
+              "timeUnit": "SECONDS",
+              "timepoints": []
+            },
+            "preferredTileWidth": 16384,
+            "preferredTileHeight": 64
+          }
+        },
+        "metadata": {
+          "name": "genome_image_16384.tif",
+          "width": 16384,
+          "height": 201321,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT8",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 16384,
+              "height": 201321
+            },
+            {
+              "downsample": 4.0,
+              "width": 4096,
+              "height": 50330
+            },
+            {
+              "downsample": 16.0,
+              "width": 1024,
+              "height": 12582
+            },
+            {
+              "downsample": 64.0,
+              "width": 256,
+              "height": 3145
+            },
+            {
+              "downsample": 256.0,
+              "width": 64,
+              "height": 786
+            },
+            {
+              "downsample": 1024.0,
+              "width": 16,
+              "height": 196
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 1.0,
+              "unit": "px"
+            },
+            "pixelHeight": {
+              "value": 1.0,
+              "unit": "px"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 256,
+          "preferredTileHeight": 64
+        }
+      },
+      "entryID": 5,
+      "randomizedName": "b60c9dc2-ee5e-4bfc-b616-46c9330a6434",
+      "imageName": "genome_image_16384.tif",
+      "metadata": {}
+    },
+    {
+      "serverBuilder": {
+        "builderType": "pyramidize",
+        "builder": {
+          "builderType": "uri",
+          "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+          "uri": "file:/C:/Users/micha/OneDrive/Repos/GenomeSearch/genome_image_57432.tif",
+          "args": [
+            "--series",
+            "0"
+          ],
+          "metadata": {
+            "name": "genome_image_57432.tif",
+            "width": 57432,
+            "height": 57432,
+            "sizeZ": 1,
+            "sizeT": 1,
+            "channelType": "DEFAULT",
+            "isRGB": false,
+            "pixelType": "UINT8",
+            "levels": [
+              {
+                "downsample": 1.0,
+                "width": 57432,
+                "height": 57432
+              }
+            ],
+            "channels": [
+              {
+                "name": "Channel 1",
+                "color": -1
+              }
+            ],
+            "pixelCalibration": {
+              "pixelWidth": {
+                "value": 1.0,
+                "unit": "px"
+              },
+              "pixelHeight": {
+                "value": 1.0,
+                "unit": "px"
+              },
+              "zSpacing": {
+                "value": 1.0,
+                "unit": "z-slice"
+              },
+              "timeUnit": "SECONDS",
+              "timepoints": []
+            },
+            "preferredTileWidth": 57432,
+            "preferredTileHeight": 36
+          }
+        },
+        "metadata": {
+          "name": "genome_image_57432.tif",
+          "width": 57432,
+          "height": 57432,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT8",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 57432,
+              "height": 57432
+            },
+            {
+              "downsample": 4.0,
+              "width": 14358,
+              "height": 14358
+            },
+            {
+              "downsample": 16.0,
+              "width": 3589,
+              "height": 3589
+            },
+            {
+              "downsample": 64.0,
+              "width": 897,
+              "height": 897
+            },
+            {
+              "downsample": 256.0,
+              "width": 224,
+              "height": 224
+            },
+            {
+              "downsample": 1024.0,
+              "width": 56,
+              "height": 56
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 1.0,
+              "unit": "px"
+            },
+            "pixelHeight": {
+              "value": 1.0,
+              "unit": "px"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 256,
+          "preferredTileHeight": 36
+        }
+      },
+      "entryID": 6,
+      "randomizedName": "1f784d97-684b-4e9e-b0cb-1799f6b9e1ff",
+      "imageName": "genome_image_57432.tif",
+      "metadata": {}
+    }
+  ]
+}

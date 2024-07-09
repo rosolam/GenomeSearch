@@ -39,7 +39,7 @@ def encode_base4(number, precision=100):
             break
 
     # Truncate to the requested precision
-    base4_fractional = base4_fractional[:precision]
+    #base4_fractional = base4_fractional[:precision]
 
     return base4_integer + '.' + base4_fractional if base4_fractional else base4_integer
 
@@ -52,10 +52,10 @@ def generate_permutations_base4(pattern):
     patterns = []
     for perm in permutations:
         trans_table = str.maketrans('0123', ''.join(perm))
-        patterns.append(pattern.translate(trans_table))
+        patterns.append((pattern.translate(trans_table), perm))
     return patterns
 
-def generate_permutations_base64(pattern, triplet_nucleotides):
+""" def generate_permutations_base64(pattern, triplet_nucleotides):
     used_chars = sorted(set(pattern))  # Get unique characters used in the pattern and sort them
     # Generate all permutations of the 64 triplet nucleotides
     permutations = itertools.permutations(triplet_nucleotides, len(used_chars))
@@ -66,16 +66,39 @@ def generate_permutations_base64(pattern, triplet_nucleotides):
         triplet_nucleotide_str = ''.join(triplet_mapping[char] for char in pattern)
         nucleotide_patterns.append(triplet_nucleotide_str)
     
-    return nucleotide_patterns
+    return nucleotide_patterns """
 
-def encode_base64(decimal_number):
-    base64_str = ""
-    while decimal_number > 0:
-        decimal_number, remainder = divmod(decimal_number, 64)
-        base64_str = base64_chars[remainder] + base64_str
-    return base64_str
+""" def encode_base64(decimal_number, precision=100):
+    # Convert the number to an integer representation of its base 64 value
+    decimal.getcontext().prec = precision + 50  # Extra precision for accuracy
+    number = decimal.Decimal(decimal_number)
 
-def create_regex_pattern(pattern, use_wildcard):
+    # Separate integer and fractional parts
+    integer_part = int(number)
+    fractional_part = number - integer_part
+
+    # Convert integer part to base 64
+    base64_integer = ''
+    if integer_part == 0:
+        base64_integer = '0'
+    else:
+        while integer_part > 0:
+            base64_integer = base64_chars[integer_part % 64] + base64_integer
+            integer_part //= 64
+
+    # Convert fractional part to base 64
+    base64_fractional = ''
+    for _ in range(precision):
+        fractional_part *= 64
+        digit = int(fractional_part)
+        base64_fractional += base64_chars[digit]
+        fractional_part -= digit
+        if fractional_part == 0:
+            break
+
+    return base64_integer + '.' + base64_fractional if base64_fractional else base64_integer """
+
+""" def create_regex_pattern(pattern, use_wildcard):
     if use_wildcard:
         # Create a regex pattern that matches the specified nucleotides or 'N' in the genome
         regex_pattern = ''.join([f"[{base}N]" for base in pattern])
@@ -115,7 +138,7 @@ def search_genome_regex(genome_sequence, search_pattern, min_non_n_matches, use_
         valid_matches_reversed = [extract_context(match) for match in matches_reversed if count_non_n_matches(match, reversed_pattern) >= min_non_n_matches]
         return valid_matches + valid_matches_reversed
     else:
-        return [extract_context(match) for match in matches] + [extract_context(match) for match in matches_reversed]
+        return [extract_context(match) for match in matches] + [extract_context(match) for match in matches_reversed] """
 
 def search_genome(genome_sequence, search_pattern):
     search_pattern_upper = search_pattern.upper()
@@ -145,35 +168,55 @@ def search_genome(genome_sequence, search_pattern):
 
     return matches
 
-def process_floats_and_search_genome(search_numbers, genome_sequence, min_non_n_matches, use_wildcard, precision, encoding):
+def convert_to_numeric_version(sequence, perm):
+    trans_table = str.maketrans(''.join(perm), '0123')
+    return sequence.translate(trans_table)
 
-    base64_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+def process_floats_and_search_genome(search_numbers, genome_sequence, min_non_n_matches, use_wildcard, precision, encoding, drop_int):
+
     nucleotides = ['A', 'C', 'G', 'T']
-    triplet_nucleotides = [''.join(triplet) for triplet in itertools.product(nucleotides, repeat=3)] if encoding == 'base64' else None
+    #triplet_nucleotides = [''.join(triplet) for triplet in itertools.product(nucleotides, repeat=3)] if encoding == 'base64' else None
     genome_sequence_upper = genome_sequence.upper() # needed for nonregex case insensitive search
 
     for search_number in search_numbers:
         if encoding == 'base4':
-            pattern = encode_base4(search_number, precision)
-            print(f"Base 4 representation of {search_number}: {pattern}")
-            pattern = pattern.replace('.', '')
+            full_pattern = encode_base4(search_number, 50)
+            pattern = full_pattern[:precision]
+            if drop_int:
+                int_part, decimal_part = full_pattern.split('.')
+                pattern = decimal_part[:precision]
+                next10pattern = decimal_part[precision:precision + 10]
+                print(f"Base 4 representation of {search_number}: {full_pattern} search pattern: {int_part}[{pattern}]{next10pattern}")
+            else:
+                pattern = full_pattern.replace('.', '')[:precision]
+                next10pattern = full_pattern.replace('.', '')[precision:precision + 10]
+                print(f"Base 4 representation of {search_number}: {full_pattern} search pattern: [{pattern}]{next10pattern}")
             nucleotide_patterns = generate_permutations_base4(pattern)
         elif encoding == 'base64':
-            pattern = encode_base64(search_number)
+            """ pattern = encode_base64(search_number)
             print(f"Base 64 representation of {search_number}: {pattern}")
-            pattern = pattern.replace('.', '')
-            nucleotide_patterns = generate_permutations_base64(pattern, triplet_nucleotides)
+            if(drop_int == True):
+                _, pattern = pattern.split('.')
+                print(pattern)
+            else:
+                pattern = pattern.replace('.', '')
+            nucleotide_patterns = generate_permutations_base64(pattern, triplet_nucleotides) """
 
-        for i, search_pattern in enumerate(nucleotide_patterns, 1):
-            print(f"Searching Pattern {i}: {search_pattern}")
+        for i, (search_pattern, perm) in enumerate(nucleotide_patterns, 1):
+            mapping = ', '.join(f'{i}={n}' for i, n in zip('0123', perm))
+            #print(f"Searching Pattern {i}: {search_pattern} (Mapping: {mapping})")
             #matches = search_genome(genome_sequence, search_pattern, min_non_n_matches, use_wildcard)
             matches = search_genome(genome_sequence_upper, search_pattern)
             for match in matches:
                 start, end, preceding, matching, following = match
-                print(f"Match found: {start} to {end} {preceding}[{matching}]{following}")
+                numeric_preceding = convert_to_numeric_version(preceding, perm)
+                numeric_matching = convert_to_numeric_version(matching, perm)
+                numeric_following = convert_to_numeric_version(following, perm)
+                print(f"Match found: Pattern {i} {search_pattern} (Mapping: {mapping}) {start} to {end} {preceding}[{matching}]{following} {numeric_preceding}[{numeric_matching}]{numeric_following}")
 
 print("Loading Genome...")
 genome_sequence = read_genome_from_file('GCF_000001405.40_GRCh38.p14_genomic.fna')
+print("Genome loaded!")
 
 search_numbers = [
     decimal.Decimal('3.14159265358979323846264338327950288419716939937510'),  # Pi (π)
@@ -201,9 +244,18 @@ search_numbers = [
     decimal.Decimal('0.30366300289873265859744812190155623'),                  # Gauss-Kuzmin-Wirsing Constant
     decimal.Decimal('2.807770242028519365221501186557772932130349804086'),     # Fransén-Robinson Constant
     decimal.Decimal('1.30637788386308069046861449260260571')                   # Mills' Constant
-]
+] 
 
-min_non_n_matches = 10
-print("Genome loaded!")
+# Calculate and insert the reciprocal of each value
+i = 0
+while i < len(search_numbers):
+    original_value = search_numbers[i]
+    reciprocal_value = decimal.Decimal(1) / original_value
+    search_numbers.insert(i + 1, reciprocal_value)
+    i += 2  # Move to the next original value
 
-process_floats_and_search_genome(search_numbers, genome_sequence, min_non_n_matches, False, 23, 'base4')
+# Print the updated search_numbers list
+for number in search_numbers:
+    print(number)
+
+process_floats_and_search_genome(search_numbers, genome_sequence, 0, False, 19, 'base4', True)
